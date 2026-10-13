@@ -239,3 +239,28 @@ html[data-theme='dark'] .project-body>.project-tools {color:var(--accent)}
   .detail-line {grid-template-columns:1fr;gap:2px}
 }
 @media(prefers-reduced-motion:reduce) {html {scroll-behavior:auto}*,*::before,*::after {transition:none!important}}
+
+
+/* v2: Keep every project photograph visible at its native aspect ratio.
+   No thumbnails, no stretching, no cover cropping. */
+.project-visual { background:var(--image-bg); }
+.project-visual img { width:100%;height:100%;object-fit:contain;object-position:center; }
+.detail-cover-image:not(.detail-theme-pair) {
+  width:100%;height:auto;min-height:0;max-height:none;display:flex;
+  align-items:center;justify-content:center;overflow:hidden;
+}
+.detail-cover-image:not(.detail-theme-pair) img {
+  display:block;width:100%;height:auto;max-height:730px;object-fit:contain;
+}
+.detail-cover-image.detail-theme-pair {
+  width:100%;height:auto;aspect-ratio:1440 / 1009;max-height:730px;
+  position:relative;overflow:hidden;
+}
+.detail-cover-image.detail-theme-pair img {
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+}
+@media(max-width:720px) {
+  .detail-cover-image:not(.detail-theme-pair) {height:auto;}
+  .detail-cover-image.detail-theme-pair {height:auto;aspect-ratio:1440 / 1009;}
+  .project-visual img {object-fit:contain;}
+}

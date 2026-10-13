@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base=import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout title="Undergraduate Thesis | Nafiz Fuad Niloy" description="Undergraduate thesis studying reliability-aware crystal graph learning for lead-free halide perovskite absorbers.">
+<main id="main" class="detail-main">
+<div class="container">
+  <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href={`${base}`}>Home</a><span aria-hidden="true">/</span><a href={`${base}#research`}>Research</a><span aria-hidden="true">/</span><span aria-current="page">Undergraduate thesis</span></nav>
+  <header class="detail-hero">
+    <div class="detail-kicker"><span>UNDERGRADUATE THESIS / 2026–2027</span><span class="detail-status">ONGOING</span></div>
+    <h1>Reliability-aware graph learning for lead-free perovskites</h1>
+    <p class="detail-lead">My undergraduate thesis studies how crystal graph models can be used to predict materials properties, with attention to how reliable those predictions are.</p>
+  </header>
+  <figure class="detail-figure">
+    <div class="detail-cover-image detail-theme-pair">
+  <img class="image-light" src={`${base}images/perovskite-light.png`} alt="Conceptual crystal graph depicting atomic sites and neighbor links" decoding="async">
+  <img class="image-dark" src={`${base}images/perovskite-dark.png`} alt="" aria-hidden="true" decoding="async">
+</div>
+    <figcaption>Conceptual illustration of a crystal graph. It is not a computed structure or research result.</figcaption>
+  </figure>
+  <div class="detail-content-grid">
+    <aside class="detail-sidebar" aria-label="Project information">
+      <dl class="detail-facts"><div class="detail-fact"><dt>Period</dt><dd>2026–2027</dd></div><div class="detail-fact"><dt>Status</dt><dd>Ongoing</dd></div><div class="detail-fact"><dt>Institution</dt><dd>Khulna University of Engineering &amp; Technology</dd></div><div class="detail-fact"><dt>Supervisor</dt><dd>Md. Mahmodul Alam<br><small>Assistant Professor, Energy Science and Engineering, KUET</small></dd></div></dl>
+      
+    </aside>
+    <div class="detail-article"><section class="detail-section"><h2>Research focus</h2>
+     <p>Lead-free halide perovskites are being investigated as potential photovoltaic absorber materials. My work examines graph-based representations of crystal structures and their use in predicting relevant material properties.</p>
+     <p>Beyond prediction accuracy, the focus includes understanding where a model is uncertain and how much confidence can be placed in its outputs.</p></section>
+     <section class="detail-section"><h2>Methods under study</h2>
+     <ul class="detail-list"><li><strong>Crystal graph learning:</strong> CGCNN and ALIGNN are among the model approaches considered for structure-based prediction.</li><li><strong>Model reliability:</strong> Studying uncertainty-aware prediction and how models behave on less familiar structures.</li><li><strong>Physical calculations:</strong> Density functional theory (DFT) forms part of the computational research context.</li></ul></section>
+     <section class="detail-section"><h2>Current status</h2><p>The thesis is ongoing. No validated results, material candidates or performance claims are published on this page yet.</p></section></div>
+  </div>
+  <nav class="detail-bottom-nav" aria-label="More work"><a class="detail-back" href={`${base}#research`}>← Back to research</a><div class="detail-related"><a href="../projects/autolab-scada.html">AutoLab SCADA <span aria-hidden="true">↗</span></a><a href={`${base}#projects`}>Other projects <span aria-hidden="true">↗</span></a></div></nav>
+</div>
+</main>
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base=import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout title="Battery Thermal Management | Nafiz Fuad Niloy" description="Arduino-based intelligent battery thermal management with two sensors and staged protection.">
+<main id="main" class="detail-main">
+<div class="container">
+  <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href={`${base}`}>Home</a><span aria-hidden="true">/</span><a href={`${base}#projects`}>Projects</a><span aria-hidden="true">/</span><span aria-current="page">Thermal management</span></nav>
+  <header class="detail-hero">
+    <div class="detail-kicker"><span>THIRD-YEAR ENGINEERING PROJECT / 2025</span><span class="detail-status">COMPLETED</span></div>
+    <h1>Intelligent battery thermal management</h1>
+    <p class="detail-lead">A third-year prototype using two temperature sensors and an Arduino to monitor a battery setup and respond to rising temperature.</p>
+  </header>
+  <figure class="detail-figure">
+    <div class="detail-cover-image"><img src="https://raw.githubusercontent.com/nf-niloy/arduino-battery-thermal-management/main/assets/setup.jpg" alt="Arduino battery temperature monitoring hardware with fan, relays, LCD and wiring" decoding="async"></div>
+    <figcaption>Arduino-based experimental setup with temperature sensors, relays, a fan and LCD.</figcaption>
+  </figure>
+  <div class="detail-content-grid">
+    <aside class="detail-sidebar" aria-label="Project information">
+      <dl class="detail-facts"><div class="detail-fact"><dt>Year</dt><dd>2025</dd></div><div class="detail-fact"><dt>Status</dt><dd>Completed</dd></div><div class="detail-fact"><dt>Category</dt><dd>Third-year engineering project</dd></div><div class="detail-fact"><dt>Supervisor</dt><dd>Dr. Md. Shameem Hossain<br><small>Professor, Energy Science and Engineering, KUET</small></dd></div></dl>
+      <div class="detail-resources"><h2>Links &amp; documents</h2><a href="https://github.com/nf-niloy/arduino-battery-thermal-management" target="_blank" rel="noopener noreferrer">Source &amp; documentation <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/arduino-battery-thermal-management/blob/main/report/Battery_Thermal_Management_Project_Report.pdf" target="_blank" rel="noopener noreferrer">Full report (PDF) <span aria-hidden="true">↗</span></a></div>
+    </aside>
+    <div class="detail-article"><section class="detail-section"><h2>System overview</h2><p>The prototype combines a DS18B20 contact sensor and an MLX90614 infrared sensor with an Arduino Uno. It evaluates temperature readings, monitors sensor faults and controls a buzzer, cooling fan and motor load. A 16×2 LCD shows the current status.</p></section>
+     <section class="detail-section"><h2>Protection logic</h2><div class="detail-step-list"><div><span>01 / WARNING</span><strong>32°C</strong><p>Audible temperature warning.</p></div><div><span>02 / COOLING</span><strong>35°C</strong><p>Relay-controlled fan is switched on.</p></div><div><span>03 / LOAD CUTOFF</span><strong>40°C</strong><p>The motor load is disconnected.</p></div></div><p>Hysteresis reduces repeated switching around the thresholds. The firmware can continue using one valid sensor when the other fails.</p></section>
+     <section class="detail-section"><h2>Prototype observations</h2><p>The documented test recorded fan activation at 35.24°C, load disconnection at 40.41°C and recovery at 31.74°C. These observations illustrate the implemented control sequence.</p><p class="detail-note">This educational prototype is not a substitute for a battery management system (BMS) or independently validated battery safety equipment.</p></section></div>
+  </div>
+  <nav class="detail-bottom-nav" aria-label="More work"><a class="detail-back" href={`${base}#projects`}>← Back to projects</a><div class="detail-related"><a href={`${base}projects/glazing-energy-analysis/`}>Glazing analysis <span aria-hidden="true">↗</span></a><a href={`${base}projects/autolab-scada/`}>AutoLab SCADA <span aria-hidden="true">↗</span></a></div></nav>
+</div>
+</main>
+</BaseLayout>

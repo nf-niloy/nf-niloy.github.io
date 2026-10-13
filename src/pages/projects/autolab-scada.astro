@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base=import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout title="AutoLab SCADA | Nafiz Fuad Niloy" description="AutoLab SCADA — laboratory monitoring, Python\u2013Arduino process control, and browser demo.">
+<main id="main" class="detail-main">
+<div class="container">
+  <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href={`${base}`}>Home</a><span aria-hidden="true">/</span><a href={`${base}#projects`}>Projects</a><span aria-hidden="true">/</span><span aria-current="page">AutoLab SCADA</span></nav>
+  <header class="detail-hero">
+    <div class="detail-kicker"><span>SOFTWARE &AMP; AUTOMATION PROJECT / 2026</span><span class="detail-status">COMPLETED</span></div>
+    <h1>AutoLab SCADA</h1>
+    <p class="detail-lead">A laboratory monitoring and automation workspace combining a web interface, a Python gateway and Arduino control logic.</p>
+  </header>
+  <figure class="detail-figure">
+    <div class="detail-cover-image detail-theme-pair"><img class="image-light" src={`${base}images/autolab-scada-welcome-light.png`} alt="Light-theme AutoLab SCADA welcome and workspace selection interface" decoding="async"><img class="image-dark" src={`${base}images/autolab-scada-welcome-dark.png`} alt="" aria-hidden="true" decoding="async"></div>
+    <figcaption>AutoLab SCADA web interface. The public demo uses simulated readings.</figcaption>
+  </figure>
+  <div class="detail-content-grid">
+    <aside class="detail-sidebar" aria-label="Project information">
+      <dl class="detail-facts"><div class="detail-fact"><dt>Year</dt><dd>2026</dd></div><div class="detail-fact"><dt>Status</dt><dd>Completed</dd></div><div class="detail-fact"><dt>Category</dt><dd>Software &amp; automation</dd></div><div class="detail-fact"><dt>Stack</dt><dd>JavaScript, Python, FastAPI, Arduino, SQLite</dd></div></dl>
+      <div class="detail-resources"><h2>Links &amp; documents</h2><a href="https://nf-niloy.github.io/autolab-scada/" target="_blank" rel="noopener noreferrer">Try the live demo <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/autolab-scada" target="_blank" rel="noopener noreferrer">GitHub repository <span aria-hidden="true">↗</span></a></div>
+    </aside>
+    <div class="detail-article"><section class="detail-section"><h2>What I built</h2><p>AutoLab SCADA brings temperature monitoring, manual motor and fan commands, timed process recipes and experiment records into one browser interface. It was built as a small-scale laboratory automation system rather than a full industrial SCADA installation.</p></section>
+     <section class="detail-section"><h2>How it works</h2><ul class="detail-list"><li><strong>Dashboard:</strong> Temperature readings, status indicators, trends and a timestamped activity log.</li><li><strong>Process recipes:</strong> Configurable steps for motor and fan operation, with duration and repeat settings.</li><li><strong>Experiment records:</strong> Previous runs and history with export options.</li><li><strong>Hardware integration:</strong> A separate FastAPI/PySerial gateway exchanges commands and telemetry with Arduino firmware. Local SQLite storage records hardware-side data.</li></ul></section>
+     <section class="detail-section"><h2>Demo and hardware modes</h2><p>Anyone can open the public browser demo and test its interface without hardware. Demo measurements and actuator states are simulated. The private operating mode requires an authorized local gateway and connected Arduino; it is not available simply by opening the public link.</p><p class="detail-note">This is an educational prototype, not a certified industrial control or safety system.</p></section></div>
+  </div>
+  <nav class="detail-bottom-nav" aria-label="More work"><a class="detail-back" href={`${base}#projects`}>← Back to projects</a><div class="detail-related"><a href={`${base}projects/glazing-energy-analysis/`}>Glazing analysis <span aria-hidden="true">↗</span></a><a href={`${base}projects/battery-thermal-management/`}>Battery thermal management <span aria-hidden="true">↗</span></a></div></nav>
+</div>
+</main>
+</BaseLayout>

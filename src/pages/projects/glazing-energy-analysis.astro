@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base=import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout title="Glazing Energy Analysis | Nafiz Fuad Niloy" description="Glazing energy analysis — comparing four window configurations using DesignBuilder and EnergyPlus.">
+<main id="main" class="detail-main">
+<div class="container">
+  <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href={`${base}`}>Home</a><span aria-hidden="true">/</span><a href={`${base}#projects`}>Projects</a><span aria-hidden="true">/</span><span aria-current="page">Glazing analysis</span></nav>
+  <header class="detail-hero">
+    <div class="detail-kicker"><span>ACADEMIC PROJECT / 2026</span><span class="detail-status">COMPLETED</span></div>
+    <h1>Glazing systems &amp; building energy analysis</h1>
+    <p class="detail-lead">A simulation study comparing four window glazing configurations in the same residential building model.</p>
+  </header>
+  <figure class="detail-figure">
+    <div class="detail-cover-image"><img src="https://raw.githubusercontent.com/nf-niloy/glazing-energy-analysis/main/figures/building-model.png" width="426" height="290" alt="DesignBuilder model of the residential building used for the glazing simulations" decoding="async"></div>
+    <figcaption>Residential building model created in DesignBuilder and evaluated with EnergyPlus.</figcaption>
+  </figure>
+  <div class="detail-content-grid">
+    <aside class="detail-sidebar" aria-label="Project information">
+      <dl class="detail-facts"><div class="detail-fact"><dt>Year</dt><dd>2026</dd></div><div class="detail-fact"><dt>Status</dt><dd>Completed</dd></div><div class="detail-fact"><dt>Category</dt><dd>Academic project</dd></div><div class="detail-fact"><dt>Tools</dt><dd>DesignBuilder, EnergyPlus</dd></div></dl>
+      <div class="detail-resources"><h2>Links &amp; documents</h2><a href="https://github.com/nf-niloy/glazing-energy-analysis" target="_blank" rel="noopener noreferrer">GitHub project &amp; data <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/glazing-energy-analysis/blob/main/report/glazing-systems-energy-performance.pdf" target="_blank" rel="noopener noreferrer">Full report (PDF) <span aria-hidden="true">↗</span></a></div>
+    </aside>
+    <div class="detail-article"><section class="detail-section"><h2>Study design</h2><p>I compared single clear, double clear, double Low-E and triple clear glazing while keeping the modeled building geometry, window layout, weather, schedules and HVAC settings consistent. The main comparison was between window solar heat gain and total cooling electricity demand.</p><p>The model used a 30% external window-to-wall ratio and a 24°C cooling setpoint.</p></section>
+     <section class="detail-section"><h2>Simulation results</h2><p>Of the four cases, double Low-E glazing had the lowest modeled annual cooling electricity consumption.</p>
+       <div class="detail-metrics"><div><strong>3.16%</strong><span>Cooling electricity saving with double Low-E</span></div><div><strong>35.02%</strong><span>Window solar-gain reduction with double Low-E</span></div></div>
+       <div class="detail-table-scroll"><table class="detail-table"><caption>Annual simulation results (not measured consumption)</caption><thead><tr><th scope="col">Glazing type</th><th scope="col">Cooling electricity (kWh)</th><th scope="col">Change vs. baseline</th></tr></thead><tbody><tr><th scope="row">Single clear</th><td>40,683.24</td><td>Baseline</td></tr><tr><th scope="row">Double clear</th><td>40,699.96</td><td>0.04% increase</td></tr><tr><th scope="row">Double Low-E</th><td>39,396.43</td><td>3.16% saving</td></tr><tr><th scope="row">Triple clear</th><td>40,258.15</td><td>1.04% saving</td></tr></tbody></table></div>
+       <p>Double clear glazing reduced window solar gain substantially but did not reduce whole-building cooling electricity. A lower solar gain does not automatically give the same percentage of electricity saving.</p></section>
+     <section class="detail-section"><h2>Scope</h2><p>These are simulation results for the selected building model and operating conditions. They are not field measurements, and the study does not establish which glazing is best for every building or climate.</p></section></div>
+  </div>
+  <nav class="detail-bottom-nav" aria-label="More work"><a class="detail-back" href={`${base}#projects`}>← Back to projects</a><div class="detail-related"><a href={`${base}projects/autolab-scada/`}>AutoLab SCADA <span aria-hidden="true">↗</span></a><a href={`${base}projects/battery-thermal-management/`}>Battery thermal management <span aria-hidden="true">↗</span></a></div></nav>
+</div>
+</main>
+</BaseLayout>

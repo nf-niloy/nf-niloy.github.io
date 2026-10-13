@@ -1,70 +1,49 @@
-# Nafiz Fuad Niloy — Research Portfolio (v1)
+# Nafiz Fuad Niloy — Academic Portfolio (Astro v2)
 
-A lightweight, one-page academic portfolio for **Nafiz Fuad Niloy**, Energy Science and Engineering undergraduate at **KUET**. This is a **new, independent site** for the `nf-niloy/niloy.github.io` repository. It is not an update to the existing `nf-niloy/nf-niloy.github.io` repository.
+Research-focused portfolio rebuilt in **Astro**, retaining the v1 visual style.
 
-## What's included
+## Pages
 
-- Research-focused introduction and undergraduate thesis (2026–2027, ongoing).
-- Selected engineering projects: AutoLab SCADA, Glazing Energy Analysis and Battery Thermal Management.
-- Education, research interests and direct GitHub/contact links.
-- Responsive light and dark modes in the existing teal/plum Deep Ocean color family.
-- No Notes section, rotating 3D hero, autoplay animations, npm, Astro, build tool or runtime dependencies.
-- Optimized local WebP images. The images for Glazing and Battery are cropped previews of the existing website's project photographs, not new renders. The thesis crystal graph is explicitly conceptual.
+- `/` — Home, thesis and engineering projects
+- `/research/thesis/` — Undergraduate thesis case study
+- `/projects/autolab-scada/` — Automation project
+- `/projects/glazing-energy-analysis/` — EnergyPlus comparison
+- `/projects/battery-thermal-management/` — Arduino prototype
 
-## Preview on your laptop (NO npm needed)
+## Original project photographs
 
-Extract the ZIP to `D:\niloy-research-v1`. Open `index.html` directly in Chrome or Edge.
+This version **does not upscale the tiny WebP thumbnails** from the original v1 ZIP.
+Instead:
 
-If desired, you can also run a local server with Python (optional):
+- The light/dark AutoLab interface PNGs are from the earlier full-size AutoLab portfolio archive (1440 × 1009).
+- The light/dark crystal diagrams are original 2048 × 1280 PNG files.
+- The original full-resolution battery setup photograph is loaded from `nf-niloy/arduino-battery-thermal-management`.
+- The original full-resolution glazing building screenshot is loaded from `nf-niloy/glazing-energy-analysis`.
+- Every project image uses `object-fit: contain` to prevent image cropping.
 
-```powershell
-cd "D:\niloy-research-v1"
-python -m http.server 8000
+The original Glazing and Battery images require internet access when viewed.
+
+## Deploying to GitHub Pages
+
+This project is for **`nf-niloy/niloy.github.io`** (a GitHub Pages project repository).
+The Astro `base` is `/niloy.github.io` and the workflow deploys `dist/`.
+
+**Settings → Pages → Source: GitHub Actions.**
+
+The GitHub Actions workflow installs Node dependencies and builds the website.
+You do NOT need Node.js or npm installed on your laptop just to push changes.
+
+For local development with Node installed:
+
+```bash
+npm install
+npm run dev
+npm run build
 ```
 
-Then visit `http://localhost:8000/`.
+## Important
 
-## Publish to a NEW GitHub repository
+This is a complete replacement of the v1 static site; preserve your `.git` directory.
+Do not rename `nf-niloy.github.io` (the old portfolio) or change that repo.
 
-1. On GitHub, create an **empty, public repository** named `niloy.github.io` under account `nf-niloy`. Do **not** initialize it with a README, license or `.gitignore`.
-2. Extract the ZIP into `D:\niloy-research-v1` so `index.html` is directly inside that folder.
-3. Open PowerShell:
-
-```powershell
-cd "D:\niloy-research-v1"
-git init
-git branch -M main
-git remote add origin https://github.com/nf-niloy/niloy.github.io.git
-git add .
-git commit -m "Launch research portfolio v1"
-git push -u origin main
-```
-
-4. Go to **Repository Settings → Pages → Build and deployment** and choose **Deploy from a branch**, **main**, **/(root)**; save.
-5. The new preview URL will normally be:
-
-   **https://nf-niloy.github.io/niloy.github.io/**
-
-No `npm install` or `npm run build` is needed. Every local file reference is relative, so the site works as a GitHub Pages project site beneath that path.
-
-## IMPORTANT — testing vs replacing the current website
-
-The account name is **nf-niloy**. Consequently, the repo `niloy.github.io` is a **project site**, **not** the special GitHub user site at `https://nf-niloy.github.io/`.
-
-**Creating or publishing this repo will NOT remove, overwrite or unpublish the current homepage.** If you later prefer the new design and want it at `https://nf-niloy.github.io/`, an option is:
-
-1. Rename the old repository `nf-niloy.github.io` to a backup name like `niloy-portfolio-archive` (so the source is retained).
-2. Rename the new repository `niloy.github.io` to `nf-niloy.github.io`.
-3. Recheck Settings → Pages (main, /(root)), wait for redeployment, and verify the root URL.
-
-Do those steps **only after** testing and deciding to switch. GitHub Pages settings, existing redirects and custom domains may need attention on migration.
-
-## Editing content later
-
-- **Text, research details, projects, links:** `index.html`
-- **Layout, color palette, responsiveness:** `assets/site.css`
-- **Light/dark button and mobile menu:** `assets/site.js`
-- **Photos:** `assets/img/`
-- **Browser-tab icon:** `assets/favicon.svg`
-
-All personal and project details were adapted from the existing public portfolio and project repositories. Review thesis status, supervisor, project descriptions and external links as your work changes. No thesis publications or experimental claims were invented.
+Designed with no Canvas animations, maintaining fast mobile scrolling, theme selection, accessible navigation and the crystal Back-to-Top control.

@@ -62,3 +62,28 @@ html[data-theme='dark'] .detail-cover-image .image-dark{display:block}
 @media (max-width:900px){.detail-content-grid{grid-template-columns:1fr;gap:35px}.detail-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:28px}.detail-facts{min-width:0}.detail-resources{padding-top:0}}
 @media (max-width:720px){.detail-main{padding-bottom:30px}.detail-breadcrumb{margin-top:23px;margin-bottom:27px;font-size:11px}.detail-hero{margin-bottom:25px}.detail-kicker{font-size:10px}.detail-lead{font-size:17px}.detail-cover-image{height:clamp(218px,60vw,350px);border-radius:10px}.detail-figure{margin-bottom:35px}.detail-sidebar{display:block}.detail-resources{padding-top:26px}.detail-content-grid{gap:25px}.detail-section{margin-bottom:25px;padding-bottom:18px}.detail-metrics{grid-template-columns:1fr 1fr;gap:10px}.detail-step-list{grid-template-columns:1fr 1fr}.detail-bottom-nav{align-items:flex-start;flex-direction:column}.detail-related{justify-content:flex-start}}
 @media (max-width:400px){.detail-step-list{grid-template-columns:1fr}.detail-metrics strong{font-size:25px}}
+
+
+/* v2: Keep every project photograph visible at its native aspect ratio.
+   No thumbnails, no stretching, no cover cropping. */
+.project-visual { background:var(--image-bg); }
+.project-visual img { width:100%;height:100%;object-fit:contain;object-position:center; }
+.detail-cover-image:not(.detail-theme-pair) {
+  width:100%;height:auto;min-height:0;max-height:none;display:flex;
+  align-items:center;justify-content:center;overflow:hidden;
+}
+.detail-cover-image:not(.detail-theme-pair) img {
+  display:block;width:100%;height:auto;max-height:730px;object-fit:contain;
+}
+.detail-cover-image.detail-theme-pair {
+  width:100%;height:auto;aspect-ratio:1440 / 1009;max-height:730px;
+  position:relative;overflow:hidden;
+}
+.detail-cover-image.detail-theme-pair img {
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+}
+@media(max-width:720px) {
+  .detail-cover-image:not(.detail-theme-pair) {height:auto;}
+  .detail-cover-image.detail-theme-pair {height:auto;aspect-ratio:1440 / 1009;}
+  .project-visual img {object-fit:contain;}
+}
