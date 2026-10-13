@@ -33,13 +33,14 @@ const base=import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `
       <div class="container">
         <div class="section-head"><span class="section-no">01 / RESEARCH</span><h2 id="research-title">Current <em>research</em></h2></div>
         <article class="research-panel">
+          <a class="research-panel-hit" href={`${base}research/thesis/`} aria-label="View undergraduate thesis details"></a>
           <div class="research-content">
             <div class="research-topline"><span>UNDERGRADUATE THESIS</span><span class="status-text"><span class="status-dot"></span> ONGOING</span></div>
             <h3>Reliability-aware graph learning for lead-free perovskites</h3>
             <p>Studying crystal graph neural networks and uncertainty-aware property prediction for lead-free halide perovskite photovoltaic absorbers.</p>
             <p class="research-note">This is ongoing work; research results have not yet been reported here.</p>
             <div class="research-methods"><span>CGCNN</span><span>ALIGNN</span><span>DFT</span><span>Uncertainty quantification</span></div>
-            <div class="supervision"><span>SUPERVISOR</span><p>Md. Mahmodul Alam<br><small>Assistant Professor, Dept. of Energy Science and Engineering, KUET</small></p></div><a class="understated-link thesis-detail-link" href={`${base}research/thesis/`}>Read thesis details <span aria-hidden="true">↗</span></a>
+            <div class="supervision"><span>SUPERVISOR</span><p>Md. Mahmodul Alam<br><small>Assistant Professor, Dept. of Energy Science and Engineering, KUET</small></p></div>
           </div>
           <figure class="research-figure">
             <div class="research-image-wrap">
@@ -57,6 +58,7 @@ const base=import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `
         <div class="section-head"><span class="section-no">02 / ENGINEERING WORK</span><h2 id="projects-title">Selected <em>projects</em></h2><p class="section-intro">Coursework and independent engineering work, with source files and reports where available.</p></div>
         <div class="project-grid">
           <article class="project-card">
+            <a class="project-card-hit" href={`${base}projects/autolab-scada/`} aria-label="View AutoLab SCADA details"></a>
             <div class="project-visual">
               <img class="image-light" src={`${base}images/autolab-scada-welcome-light.png`} alt="AutoLab SCADA public demo interface with simulated process data" loading="lazy" decoding="async">
               <img class="image-dark" src={`${base}images/autolab-scada-welcome-dark.png`} alt="" aria-hidden="true" loading="lazy" decoding="async">
@@ -66,27 +68,29 @@ const base=import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `
               <h3>AutoLab SCADA</h3>
               <p>An Arduino-connected monitoring and control workspace with temperature readings, programmable process sequences and run history. The public demo operates with simulated data.</p>
               <p class="project-tools">Python · FastAPI · Arduino · JavaScript</p>
-              <div class="resource-links"><a class="detail-resource-link" href={`${base}projects/autolab-scada/`}>Read details <span aria-hidden="true">↗</span></a><a href="https://nf-niloy.github.io/autolab-scada/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/autolab-scada" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span></a></div>
+              <div class="resource-links"><a href="https://nf-niloy.github.io/autolab-scada/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/autolab-scada" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span></a></div>
             </div>
           </article>
           <article class="project-card">
+            <a class="project-card-hit" href={`${base}projects/glazing-energy-analysis/`} aria-label="View Glazing energy analysis details"></a>
             <div class="project-visual"><img src="https://raw.githubusercontent.com/nf-niloy/glazing-energy-analysis/main/figures/building-model.png" alt="DesignBuilder model of the residential building used in the glazing study" loading="lazy" decoding="async"></div>
             <div class="project-body">
               <div class="project-meta"><span>2026 / ACADEMIC PROJECT</span><span>COMPLETED</span></div>
               <h3>Glazing & building energy analysis</h3>
               <p>Compared four glazing types in DesignBuilder and EnergyPlus. Double Low-E glazing gave a 3.16% reduction in simulated annual cooling electricity for the modeled building.</p>
               <p class="project-tools">DesignBuilder · EnergyPlus · Energy simulation</p>
-              <div class="resource-links"><a class="detail-resource-link" href={`${base}projects/glazing-energy-analysis/`}>Read details <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/glazing-energy-analysis" target="_blank" rel="noopener noreferrer">Project files <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/glazing-energy-analysis/blob/main/report/glazing-systems-energy-performance.pdf" target="_blank" rel="noopener noreferrer">Report <span aria-hidden="true">↗</span></a></div>
+              <div class="resource-links"><a href="https://github.com/nf-niloy/glazing-energy-analysis" target="_blank" rel="noopener noreferrer">Project files <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/glazing-energy-analysis/blob/main/report/glazing-systems-energy-performance.pdf" target="_blank" rel="noopener noreferrer">Report <span aria-hidden="true">↗</span></a></div>
             </div>
           </article>
           <article class="project-card">
+            <a class="project-card-hit" href={`${base}projects/battery-thermal-management/`} aria-label="View Battery thermal management details"></a>
             <div class="project-visual"><img src="https://raw.githubusercontent.com/nf-niloy/arduino-battery-thermal-management/main/assets/setup.jpg" alt="Arduino, sensors, relays, fan and wiring in a battery thermal management prototype" loading="lazy" decoding="async"></div>
             <div class="project-body">
               <div class="project-meta"><span>2025 / THIRD-YEAR PROJECT</span><span>COMPLETED</span></div>
               <h3>Intelligent battery thermal management</h3>
               <p>An Arduino-based system using two temperature sensors, automated cooling and staged thermal protection, with status displayed on an LCD.</p>
               <p class="project-tools">Arduino · Temperature sensing · Embedded control</p>
-              <div class="resource-links"><a class="detail-resource-link" href={`${base}projects/battery-thermal-management/`}>Read details <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/arduino-battery-thermal-management" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/arduino-battery-thermal-management/blob/main/report/Battery_Thermal_Management_Project_Report.pdf" target="_blank" rel="noopener noreferrer">Report <span aria-hidden="true">↗</span></a></div>
+              <div class="resource-links"><a href="https://github.com/nf-niloy/arduino-battery-thermal-management" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/arduino-battery-thermal-management/blob/main/report/Battery_Thermal_Management_Project_Report.pdf" target="_blank" rel="noopener noreferrer">Report <span aria-hidden="true">↗</span></a></div>
             </div>
           </article>
         </div>

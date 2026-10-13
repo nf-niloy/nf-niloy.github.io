@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
   <div class="site-search-footer">↑ ↓ Navigate <span>·</span> Enter Open <span>·</span> Esc Close</div>
 </dialog>
 
-<style>
+<style is:global>
   .site-search-launch {
     display: inline-flex; align-items: center; justify-content: center; gap: 9px;
     height: 39px; min-width: 92px; padding: 0 12px;
@@ -100,8 +100,8 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
   }
   @media (max-width: 390px) {
     .site-search-launch { min-width: 34px; width: 34px; }
-    :global(.header-actions) { gap: 7px; }
-    :global(.menu-toggle) { padding-inline: 8px; white-space: nowrap; }
+    .header-actions { gap: 7px; }
+    .menu-toggle { padding-inline: 8px; white-space: nowrap; }
   }
   @media (prefers-reduced-motion: reduce) {
     .site-search-launch { transition: none; }
@@ -109,7 +109,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 </style>
 
 <script>
-  // The site has six navigable destinations, so an in-memory index is enough.
+  // Five destinations; an in-memory index is sufficient.
   // No content fetch is needed, and there are no new scroll animations.
   const trigger = document.querySelector<HTMLButtonElement>('[data-site-search-trigger]');
   const dialog = document.querySelector<HTMLDialogElement>('[data-site-search-dialog]');
@@ -119,14 +119,11 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
   const base = trigger?.dataset.base || '/';
 
   const pages = [
-    { title: 'Home', detail: 'Nafiz Fuad Niloy · Energy Science and Engineering, KUET', path: '', tags: 'introduction' },
-    { title: 'Undergraduate thesis', detail: 'Reliability-aware graph learning · Lead-free perovskites · CGCNN · ALIGNN', path: 'research/thesis/', tags: 'materials discovery crystal dft research' },
-    { title: 'AutoLab SCADA', detail: 'Laboratory automation · Arduino · Python · FastAPI · Live demo', path: 'projects/autolab-scada/', tags: 'temperature monitoring process recipes simulator control' },
-    { title: 'Glazing & building energy analysis', detail: 'DesignBuilder · EnergyPlus · Solar heat gain · Cooling electricity', path: 'projects/glazing-energy-analysis/', tags: 'simulation academic project windows' },
-    { title: 'Intelligent battery thermal management', detail: 'Arduino · Two temperature sensors · Automated cooling and protection', path: 'projects/battery-thermal-management/', tags: 'third year embedded hardware' },
-    { title: 'About / education', detail: 'KUET · Energy Science and Engineering · Nilphamari, Rangpur, Bangladesh', path: '#about', tags: 'location contact background' },
-    { title: 'Projects', detail: 'Selected engineering projects', path: '#projects', tags: 'portfolio work' },
-    { title: 'Research', detail: 'Undergraduate thesis and current work', path: '#research', tags: 'ongoing thesis' },
+    { title: 'Undergraduate thesis', detail: 'Graph learning for lead-free perovskites', path: 'research/thesis/', tags: 'research materials crystal cgc nn alignn dft photovoltaic reliability' },
+    { title: 'AutoLab SCADA', detail: 'Laboratory monitoring and automation', path: 'projects/autolab-scada/', tags: 'arduino python fastapi web app live demo process control' },
+    { title: 'Glazing energy analysis', detail: 'Building energy simulation with DesignBuilder and EnergyPlus', path: 'projects/glazing-energy-analysis/', tags: 'academic cooling windows energy solar heat gain' },
+    { title: 'Battery thermal management', detail: 'Arduino temperature monitoring and protection', path: 'projects/battery-thermal-management/', tags: 'thermal sensors cooling embedded hardware third year' },
+    { title: 'About', detail: 'Education, research interests and contact', path: '#about', tags: 'kuet nilphamari rangpur bangladesh background' },
   ];
   let active = 0;
   let matches = pages;

@@ -264,3 +264,15 @@ html[data-theme='dark'] .project-body>.project-tools {color:var(--accent)}
   .detail-cover-image.detail-theme-pair {height:auto;aspect-ratio:1440 / 1009;}
   .project-visual img {object-fit:contain;}
 }
+
+/* Project panels are direct links; external GitHub/demo/report actions stay independent. */
+.project-card,.research-panel { position:relative; }
+.project-card-hit,.research-panel-hit {
+  position:absolute; inset:0; z-index:1;
+  border-radius:inherit;
+}
+.project-card-hit:focus-visible,.research-panel-hit:focus-visible {
+  outline:3px solid var(--accent); outline-offset:-4px;
+}
+.resource-links { position:relative; z-index:2; }
+.project-card:has(.project-card-hit),.research-panel:has(.research-panel-hit) { cursor:pointer; }
