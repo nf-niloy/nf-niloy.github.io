@@ -1,0 +1,83 @@
+/* Original crystal TOP motif adapted to the new static research website. */
+.crystal-top {
+  position: fixed;
+  right: 24px;
+  bottom: max(24px, calc(env(safe-area-inset-bottom, 0px) + 18px));
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  width: 57px;
+  height: 65px;
+  padding: 6px 6px 7px;
+  border: 1px solid var(--line, #2b3644);
+  border-radius: 18px;
+  background: var(--paper, #161c25);
+  color: var(--ink, #eef2f7);
+  box-shadow: 0 12px 32px rgb(12 24 32 / 12%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px) scale(.96);
+  transition: opacity .25s ease, visibility .25s ease, transform .25s ease,
+              border-color .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+@supports (background: color-mix(in srgb, white 92%, transparent)) {
+  .crystal-top { background: color-mix(in srgb, var(--paper, #161c25) 92%, transparent); }
+}
+.crystal-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+.crystal-top:hover:not(:disabled) {
+  border-color: var(--accent, #2aa7a2);
+  box-shadow: 0 12px 36px rgb(42 167 162 / 15%);
+  transform: translateY(-3px);
+}
+.crystal-top:focus-visible {
+  outline: 2px solid var(--accent, #2aa7a2);
+  outline-offset: 4px;
+}
+.crystal-top-symbol { width: 36px; height: 36px; flex-shrink: 0; transition: transform .45s ease; }
+.crystal-top:hover .crystal-top-symbol { transform: rotate(18deg); }
+.crystal-top .cage { stroke: var(--accent-tertiary, #82418e); stroke-width: 1.45; opacity: .9; }
+.crystal-top .bonds { stroke: var(--accent, #2aa7a2); stroke-width: 1.2; opacity: .9; }
+.crystal-top .bonds-faint { stroke: var(--accent-secondary, #2b6c88); stroke-width: .75; opacity: .45; }
+.crystal-top .node-primary { fill: var(--accent, #2aa7a2); }
+.crystal-top .node-secondary { fill: var(--accent-tertiary, #82418e); }
+.crystal-top .node-accent { fill: var(--accent, #2aa7a2); }
+.crystal-top-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .15em;
+  line-height: 1.1;
+  color: var(--muted, #a8b3c2);
+}
+@media (max-width: 760px) {
+  .crystal-top {
+    right: 16px;
+    bottom: max(16px, calc(env(safe-area-inset-bottom, 0px) + 12px));
+    width: 49px;
+    height: 56px;
+    border-radius: 15px;
+    /* Avoid unnecessary backdrop blur during mobile scrolling. */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--paper, #161c25);
+    box-shadow: 0 7px 20px rgb(12 24 32 / 10%);
+  }
+  .crystal-top-symbol { width: 30px; height: 30px; }
+  .crystal-top-label { font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .crystal-top, .crystal-top-symbol { transition: none; }
+  .crystal-top:hover .crystal-top-symbol { transform: none; }
+}
