@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f3ef" id="theme-color">
+<meta name="description" content="DesignBuilder and EnergyPlus comparison of four glazing configurations and their effect on cooling electricity and window solar heat gain.">
+<meta property="og:title" content="Glazing systems &amp; building energy analysis | Nafiz Fuad Niloy">
+<meta property="og:description" content="DesignBuilder and EnergyPlus comparison of four glazing configurations and their effect on cooling electricity and window solar heat gain.">
+<title>Glazing systems &amp; building energy analysis | Nafiz Fuad Niloy</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/details.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{const saved=localStorage.getItem('niloy-research-theme');document.documentElement.dataset.theme=saved==='light'||saved==='dark'?saved:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(_){document.documentElement.dataset.theme='light'}</script>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="identity" aria-label="Nafiz Fuad Niloy, home"><span class="identity-mark">N<span>.</span></span><span class="identity-copy"><strong>Nafiz Fuad Niloy</strong><small>Research &amp; engineering</small></span></a>
+    <nav class="primary-nav" aria-label="Main navigation"><a href="../index.html#research">Research</a><a href="../index.html#projects">Projects</a><a href="../index.html#about">About</a></nav>
+    <div class="header-actions"><a class="desktop-github" href="https://github.com/nf-niloy" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle light/dark theme"><span class="theme-sun" aria-hidden="true">☼</span><span class="theme-moon" aria-hidden="true">☾</span></button><button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button></div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="../index.html#research">Research</a><a href="../index.html#projects">Projects</a><a href="../index.html#about">About</a><a href="https://github.com/nf-niloy" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav>
+</header>
+<main id="main" class="detail-main">
+<div class="container">
+  <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#projects">Projects</a><span aria-hidden="true">/</span><span aria-current="page">Glazing analysis</span></nav>
+  <header class="detail-hero">
+    <div class="detail-kicker"><span>ACADEMIC PROJECT / 2026</span><span class="detail-status">COMPLETED</span></div>
+    <h1>Glazing systems &amp; building energy analysis</h1>
+    <p class="detail-lead">A simulation study comparing four window glazing configurations in the same residential building model.</p>
+  </header>
+  <figure class="detail-figure">
+    <div class="detail-cover-image"><img src="../assets/img/glazing-model.webp" width="426" height="290" alt="DesignBuilder model of the residential building used for the glazing simulations" decoding="async"></div>
+    <figcaption>Residential building model created in DesignBuilder and evaluated with EnergyPlus.</figcaption>
+  </figure>
+  <div class="detail-content-grid">
+    <aside class="detail-sidebar" aria-label="Project information">
+      <dl class="detail-facts"><div class="detail-fact"><dt>Year</dt><dd>2026</dd></div><div class="detail-fact"><dt>Status</dt><dd>Completed</dd></div><div class="detail-fact"><dt>Category</dt><dd>Academic project</dd></div><div class="detail-fact"><dt>Tools</dt><dd>DesignBuilder, EnergyPlus</dd></div></dl>
+      <div class="detail-resources"><h2>Links &amp; documents</h2><a href="https://github.com/nf-niloy/glazing-energy-analysis" target="_blank" rel="noopener noreferrer">GitHub project &amp; data <span aria-hidden="true">↗</span></a><a href="https://github.com/nf-niloy/glazing-energy-analysis/blob/main/report/glazing-systems-energy-performance.pdf" target="_blank" rel="noopener noreferrer">Full report (PDF) <span aria-hidden="true">↗</span></a></div>
+    </aside>
+    <div class="detail-article"><section class="detail-section"><h2>Study design</h2><p>I compared single clear, double clear, double Low-E and triple clear glazing while keeping the modeled building geometry, window layout, weather, schedules and HVAC settings consistent. The main comparison was between window solar heat gain and total cooling electricity demand.</p><p>The model used a 30% external window-to-wall ratio and a 24°C cooling setpoint.</p></section>
+     <section class="detail-section"><h2>Simulation results</h2><p>Of the four cases, double Low-E glazing had the lowest modeled annual cooling electricity consumption.</p>
+       <div class="detail-metrics"><div><strong>3.16%</strong><span>Cooling electricity saving with double Low-E</span></div><div><strong>35.02%</strong><span>Window solar-gain reduction with double Low-E</span></div></div>
+       <div class="detail-table-scroll"><table class="detail-table"><caption>Annual simulation results (not measured consumption)</caption><thead><tr><th scope="col">Glazing type</th><th scope="col">Cooling electricity (kWh)</th><th scope="col">Change vs. baseline</th></tr></thead><tbody><tr><th scope="row">Single clear</th><td>40,683.24</td><td>Baseline</td></tr><tr><th scope="row">Double clear</th><td>40,699.96</td><td>0.04% increase</td></tr><tr><th scope="row">Double Low-E</th><td>39,396.43</td><td>3.16% saving</td></tr><tr><th scope="row">Triple clear</th><td>40,258.15</td><td>1.04% saving</td></tr></tbody></table></div>
+       <p>Double clear glazing reduced window solar gain substantially but did not reduce whole-building cooling electricity. A lower solar gain does not automatically give the same percentage of electricity saving.</p></section>
+     <section class="detail-section"><h2>Scope</h2><p>These are simulation results for the selected building model and operating conditions. They are not field measurements, and the study does not establish which glazing is best for every building or climate.</p></section></div>
+  </div>
+  <nav class="detail-bottom-nav" aria-label="More work"><a class="detail-back" href="../index.html#projects">← Back to projects</a><div class="detail-related"><a href="autolab-scada.html">AutoLab SCADA <span aria-hidden="true">↗</span></a><a href="battery-thermal-management.html">Battery thermal management <span aria-hidden="true">↗</span></a></div></nav>
+</div>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div class="footer-signature"><span class="footer-n">N<span>.</span></span><span>Nafiz Fuad Niloy<br><small>Energy Science &amp; Engineering · KUET</small></span></div><div class="footer-links"><a href="https://github.com/nf-niloy" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://linktr.ee/niloynf9" target="_blank" rel="noopener noreferrer">Contact ↗</a></div><span class="copyright">© <span id="year">2026</span> Nafiz Fuad Niloy</span></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
