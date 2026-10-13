@@ -2,17 +2,7 @@
 (() => {
   if (document.getElementById('crystal-back-to-top')) return;
 
-  // Resolve the stylesheet against the executing site.js, so links work on
-  // the homepage and on nested research/ and projects/ pages alike.
-  const siteScript = document.currentScript;
-  if (siteScript?.src && !document.querySelector('link[data-crystal-top-css]')) {
-    const styles = document.createElement('link');
-    styles.rel = 'stylesheet';
-    styles.href = new URL('crystal-top.css', siteScript.src).href;
-    styles.dataset.crystalTopCss = '';
-    document.head.appendChild(styles);
-  }
-
+  // The stylesheet is loaded by the layout; the host persists across Astro navigation.
   const button = document.createElement('button');
   button.type = 'button';
   button.id = 'crystal-back-to-top';
@@ -34,7 +24,7 @@
       <circle class="node-accent" cx="40" cy="33.25" r="2.2" />
     </svg>
     <span class="crystal-top-label" aria-hidden="true">TOP</span>`;
-  document.body.appendChild(button);
+  (document.getElementById('crystal-top-host') || document.body).appendChild(button);
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let queued = false;

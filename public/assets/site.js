@@ -1,11 +1,10 @@
 (() => {
   const root = document.documentElement;
   const button = document.querySelector('.theme-toggle');
-  const themeMeta = document.querySelector('#theme-color');
   const refreshTheme = () => {
     const dark = root.dataset.theme === 'dark';
     button?.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-    themeMeta?.setAttribute('content', dark ? '#10141c' : '#f4f3ef');
+    document.querySelector('#theme-color')?.setAttribute('content', dark ? '#10141c' : '#f4f3ef');
   };
   refreshTheme();
   button?.addEventListener('click', () => {

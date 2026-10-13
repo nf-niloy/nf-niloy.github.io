@@ -1,0 +1,68 @@
+---
+// Only interaction behavior; no markup is added to the page.
+---
+<script>
+  import Lenis from 'lenis';
+  import 'lenis/dist/lenis.css';
+
+  const desktop = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 800px)');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let smooth: Lenis | null = null;
+
+  function syncSmoothWheel() {
+    const allowed = desktop.matches && !reduced.matches;
+    if (!allowed) {
+      smooth?.destroy();
+      smooth = null;
+      return;
+    }
+    if (smooth) return;
+    smooth = new Lenis({
+      autoRaf: true,
+      lerp: 0.14,
+      smoothWheel: true,
+      syncTouch: false,
+      wheelMultiplier: 0.95,
+      anchors: true,
+      // Search results have their own scrollbar; keep that scrollbar native.
+      prevent: (node: Element) => !!node.closest('.site-search-dialog, [data-lenis-prevent]'),
+    });
+  }
+
+  function syncThemeBeforePaint() {
+    // ClientRouter swaps the <html> element. Retain the user's existing theme.
+    let theme = document.documentElement.dataset.theme;
+    try {
+      const stored = localStorage.getItem('niloy-research-theme');
+      if (stored === 'light' || stored === 'dark') theme = stored;
+    } catch (_) { /* storage blocked */ }
+    if (theme !== 'light' && theme !== 'dark') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.dataset.theme = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#10141c' : '#f4f3ef');
+  }
+
+  function beforeNavigation() {
+    // The header/search dialog persist between pages; never leave a modal open.
+    const dialog = document.querySelector<HTMLDialogElement>('[data-site-search-dialog]');
+    if (dialog?.open) dialog.close();
+    smooth?.stop();
+  }
+
+  function afterSwap() {
+    syncThemeBeforePaint();
+    // Astro restores scroll position; update Lenis after the document changes.
+    requestAnimationFrame(() => {
+      smooth?.resize();
+      smooth?.start();
+    });
+  }
+
+  desktop.addEventListener('change', syncSmoothWheel);
+  reduced.addEventListener('change', syncSmoothWheel);
+  document.addEventListener('astro:before-preparation', beforeNavigation);
+  document.addEventListener('astro:after-swap', afterSwap);
+  document.addEventListener('astro:page-load', syncSmoothWheel);
+  syncSmoothWheel();
+</script>
